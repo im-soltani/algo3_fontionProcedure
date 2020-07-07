@@ -1,0 +1,35 @@
+proceddure  prod_scal(arr:ARRAY_OF INTEGER,tab:ARRAY_OF INTEGER,ps:integer,n:integer)
+var
+i,j:integer;
+BEGIN
+ps:=0;
+FOR i FROM 0 TO n-1  DO
+FOR j FROM 0 TO n-1  DO
+    ps:=ps+tab[i]*arr[i];
+END_FOR
+END_FOR
+END
+
+
+ALGORITHM ortogonaux
+VAR
+    arr : ARRAY_OF INTEGER[100];
+    tab : ARRAY_OF INTEGER[100];
+    i,n,ps:INTEGER;
+    
+
+BEGIN
+    read(n);
+    FOR i FROM 0 TO n-1 DO
+        read (tab[i]);
+    END_FOR
+    FOR i FROM 0 TO n-1 DO
+        read (arr[i]);
+    END_FOR
+    prod_scal(arr,tab,ps,n);
+    if (ps="null")
+    then
+    write("vecteurs ortogonaux")
+   end if
+END
+ 
